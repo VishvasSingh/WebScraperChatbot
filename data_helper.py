@@ -32,7 +32,7 @@ def format_docs(docs):
 
 
 def split_text(data: str) -> List:
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=100)
+    text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=500)
     splits = text_splitter.split_text(data)
 
     return splits

@@ -38,7 +38,7 @@ class QdrantHelper:
 
         logging.info("DATA INGESTION COMPLETED SUCCESSFULLY")
 
-    def get_relevant_chunks(self, query: str, collection_name: str, limit: int = 5, **kwargs):
+    def get_relevant_chunks(self, query: str, collection_name: str, limit: int = 25, **kwargs):
         query_embedding = self._generate_embeddings(query)
         search_results = self.client.search(collection_name=collection_name, query_vector=query_embedding[0],
                                             limit=limit)
